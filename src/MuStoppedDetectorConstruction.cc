@@ -96,7 +96,8 @@ void MuStoppedDetectorConstruction::DefineMaterials()
 
     G4NistManager * nist = G4NistManager::Instance();
     worldMat = nist->FindOrBuildMaterial("G4_AIR");
-    ConcreteMat = nist->FindOrBuildMaterial("G4_CONCRETE");
+    //ConcreteMat = nist->FindOrBuildMaterial("G4_CONCRETE");
+    ConcreteMat = nist->FindOrBuildMaterial("G4_Ti");
 /*    
     G4Isotope* isotopeTe124 = new G4Isotope("Te124",52,124,123.904*g / mole);   
     G4Element* elementTe124 = new G4Element("Tellurium124","Te124",1);
