@@ -1,0 +1,22 @@
+/tracking/verbose 0
+/control/execute MuMinusSource.mac
+
+
+/detector/BlockLength 150
+/detector/BlockWidth 150
+/detector/BlockHeight 150
+
+/detector/ConcreteLength 150
+/detector/ConcreteWidth 150
+/detector/ConcreteHeight 150
+
+/detector/TargetMaterial G4_Te
+/track/secondaryNameContains Sb124
+
+/run/initialize
+
+/run/printProgress 10000
+/run_action/out_file_name Run0_150_50_150_Sn.root 
+
+/run/beamOn 100000
+

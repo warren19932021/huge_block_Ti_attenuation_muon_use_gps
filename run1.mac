@@ -1,0 +1,31 @@
+# Macro file for example MuStopped
+# 
+# Can be run in batch, without graphic
+# or interactively: Idle> /control/execute run1.mac
+#
+# Change the default number of workers (in multi-threading mode) 
+#/run/numberOfThreads 4
+#
+# Initialize kernel
+/run/initialize
+#
+#/control/verbose 2
+/control/verbose 0
+#/run/verbose 2
+/run/verbose 0
+/event/verbose 0
+#/tracking/verbose 1
+/tracking/verbose 0
+# 
+#
+/gun/particle mu-
+/gun/energy 100 MeV
+#
+/run/beamOn 5
+# 
+#
+/gun/particle mu-
+/gun/energy 10 MeV
+/tracking/verbose 0
+#
+/run/beamOn 1

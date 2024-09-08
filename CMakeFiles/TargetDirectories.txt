@@ -1,0 +1,8 @@
+/home/iktp/Geant4-Work/NewStart/NumberofMuonStopped/CMakeFiles/install/strip.dir
+/home/iktp/Geant4-Work/NewStart/NumberofMuonStopped/CMakeFiles/install/local.dir
+/home/iktp/Geant4-Work/NewStart/NumberofMuonStopped/CMakeFiles/install.dir
+/home/iktp/Geant4-Work/NewStart/NumberofMuonStopped/CMakeFiles/list_install_components.dir
+/home/iktp/Geant4-Work/NewStart/NumberofMuonStopped/CMakeFiles/exampleMuStopped.dir
+/home/iktp/Geant4-Work/NewStart/NumberofMuonStopped/CMakeFiles/MuStopped.dir
+/home/iktp/Geant4-Work/NewStart/NumberofMuonStopped/CMakeFiles/edit_cache.dir
+/home/iktp/Geant4-Work/NewStart/NumberofMuonStopped/CMakeFiles/rebuild_cache.dir
