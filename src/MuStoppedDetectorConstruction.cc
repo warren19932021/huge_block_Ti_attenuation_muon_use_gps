@@ -97,7 +97,7 @@ void MuStoppedDetectorConstruction::DefineMaterials()
     G4NistManager * nist = G4NistManager::Instance();
     worldMat = nist->FindOrBuildMaterial("G4_AIR");
     //ConcreteMat = nist->FindOrBuildMaterial("G4_CONCRETE");
-    ConcreteMat = nist->FindOrBuildMaterial("G4_Ti");
+    //ConcreteMat = nist->FindOrBuildMaterial("G4_Ti");
 /*    
     G4Isotope* isotopeTe124 = new G4Isotope("Te124",52,124,123.904*g / mole);   
     G4Element* elementTe124 = new G4Element("Tellurium124","Te124",1);
@@ -106,15 +106,35 @@ void MuStoppedDetectorConstruction::DefineMaterials()
     Target_material->AddElement(elementTe124,1.0);
 */
 
-    Target_material = nist->FindOrBuildMaterial(TargetMaterial);
+
+
+    // Define Titanium-48 isotope
+    G4int Z_Ti = 22;  // Atomic number of Titanium
+    G4int A_Ti48 = 48; // Atomic mass of Titanium-48
+    G4double atomicMass_Ti48 = 47.9479 * g/mole;  // Atomic mass of Titanium-48
+    G4Isotope* Ti48_isotope = new G4Isotope("Ti48", Z_Ti, A_Ti48, atomicMass_Ti48);
+
+    // Define element Titanium consisting only of Ti-48 isotope
+    G4Element* pureTi48 = new G4Element("PureTitanium48", "Ti48", 1); // 1 isotope
+    pureTi48->AddIsotope(Ti48_isotope, 100*perCent);  // 100% Ti-48
+
+    // Create the material out of the element Ti-48
+    G4double density_Ti = 4.54 * g/cm3;  // Approximate density of Titanium
+    ConcreteMat = new G4Material("Pure48Ti", density_Ti, 1);  // Single element material
+    ConcreteMat->AddElement(pureTi48, 1.0);  // 100% Ti-48
+
+
+
+    //Target_material = nist->FindOrBuildMaterial(TargetMaterial);
     
-    G4cout<<"TargetMaterial: ============================    "<<Target_material->GetName()<<G4endl;
+    G4cout<<"ConcreteMat: ============================    "<<ConcreteMat->GetName()<<G4endl;
 
 }    
 
 
 G4VPhysicalVolume* MuStoppedDetectorConstruction::Construct()
 {  
+    G4cout<<"ConcreteMat in MuStoppedDetectorConstruction::Construct: ============================    "<<ConcreteMat->GetName()<<G4endl;
     
     //---- World------
     solidWorld =  new G4Box("SolidWorld",50.0*m,50.0*m,50.0*m); 
